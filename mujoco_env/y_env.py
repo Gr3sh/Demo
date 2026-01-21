@@ -23,17 +23,27 @@ class SimpleEnv:
             state_type: str, type of state space, 'joint_angle' or 'ee_pose'
             seed: int, seed for random number generator
         """
-        # Load the xml file
+        # 加载 xml 文件
         self.env = MuJoCoParserClass(name='Tabletop',rel_xml_path=xml_path)
         self.action_type = action_type
         self.state_type = state_type
 
+        # 6 个机器人关节名字
+        """
         self.joint_names = ['joint1',
                     'joint2',
                     'joint3',
                     'joint4',
                     'joint5',
                     'joint6',]
+        """
+        self.joint_names = ['Rotation_R',
+                    'Pitch_R',
+                    'Elbow_R',
+                    'Wrist_Pitch_R',
+                    'Wrist_Roll_R',
+                    'Jaw_R',]
+
         self.init_viewer()
         self.reset(seed)
 
@@ -57,6 +67,8 @@ class SimpleEnv:
         '''
         if seed != None: np.random.seed(seed=0) 
         q_init = np.deg2rad([0,0,0,0,0,0])
+
+        # ik 逆运动求解器 根据 ！！！body_names_for_ik 控制初始位置
         q_zero,ik_err_stack,ik_info = solve_ik(
             env = self.env,
             joint_names_for_ik = self.joint_names,
@@ -67,7 +79,7 @@ class SimpleEnv:
         )
         self.env.forward(q=q_zero,joint_names=self.joint_names,increase_tick=False)
 
-        # Set object positions
+        # 初始化物品位置 把物品随机生成在桌面上
         obj_names = self.env.get_body_names(prefix='body_obj_')
         n_obj = len(obj_names)
         obj_xyzs = sample_xyzs(
@@ -107,7 +119,9 @@ class SimpleEnv:
 
         '''
         if self.action_type == 'eef_pose':
+            # 根据关节名字 joint_names 来获取位置信息
             q = self.env.get_qpos_joints(joint_names=self.joint_names)
+
             self.p0 += action[:3]
             self.R0 = self.R0.dot(rpy2r(action[3:6]))
             q ,ik_err_stack,ik_info = solve_ik(
@@ -130,9 +144,11 @@ class SimpleEnv:
             q = action[:-1]
         else:
             raise ValueError('action_type not recognized')
-        
+
+        # 夹爪控制 ！！！模型相关
         gripper_cmd = np.array([action[-1]]*4)
         gripper_cmd[[1,3]] *= 0.8
+
         self.compute_q = q
         q = np.concatenate([q, gripper_cmd])
 

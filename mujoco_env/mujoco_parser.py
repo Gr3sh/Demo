@@ -792,7 +792,7 @@ class MuJoCoParserClass(object):
             
     def _parse_xml(self):
         """ 
-            Parse xml file
+            解析 xml 文件
         """
         if self.rel_xml_path is not None:
             self.full_xml_path = os.path.abspath(os.path.join(os.getcwd(),self.rel_xml_path))
@@ -823,7 +823,7 @@ class MuJoCoParserClass(object):
         else:
             self.integrator_name = 'UNKNOWN'
         
-        # State and action space
+        # 关节，自由度，活动空间
         self.n_qpos           = self.model.nq # number of states
         self.n_qvel           = self.model.nv # number of velocities (dimension of tangent space)
         self.n_qacc           = self.model.nv # number of accelerations (dimension of tangent space)

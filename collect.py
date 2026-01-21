@@ -9,9 +9,9 @@ from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
 # 如果是 None，随机生成场景
 SEED = None
 
-REPO_NAME = 'omy_pnp'
+REPO_NAME = 'XleRobot-demo'         # 数据集名称
+ROOT = "./demo_data"                # 数据存放根目录
 NUM_DEMO = 2 # 收集次数
-ROOT = "./demo_data" # 数据存放
 
 TASK_NAME = 'Put mug cup on the plate'
 xml_path = './asset/example_scene_y.xml' # 场景
@@ -31,11 +31,12 @@ if os.path.exists(ROOT):
         create_new = False
 
 if create_new:
+    # 创建 LeRobot 的 Dataset 格式
     dataset = LeRobotDataset.create(
-        repo_id=REPO_NAME,
-        root = ROOT,
-        robot_type="omy",
-        fps=20, # 20 frames per second
+        repo_id=REPO_NAME,                  # 数据集名称
+        root = ROOT,                        # 数据集保存的根目录
+        robot_type="omy",                   # 机器人型号 自定义
+        fps=20,                             # 帧率
         features={
             "observation.image": {
                 "dtype": "image",
