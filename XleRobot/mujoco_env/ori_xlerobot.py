@@ -247,7 +247,7 @@ class XLeRobotController:
 
 def main():
     try:
-        mjcf_path = "scene.xml"
+        mjcf_path = "./xml/scene.xml"
         controller = XLeRobotController(mjcf_path)
         controller.run()
     except KeyboardInterrupt:

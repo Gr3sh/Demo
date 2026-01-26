@@ -16,27 +16,13 @@ class SimpleEnv:
                 action_type='eef_pose', 
                 state_type='joint_angle',
                 seed = None):
-        """
-        args:
-            xml_path: str, path to the xml file
-            action_type: str, type of action space, 'eef_pose','delta_joint_angle' or 'joint_angle'
-            state_type: str, type of state space, 'joint_angle' or 'ee_pose'
-            seed: int, seed for random number generator
-        """
+
         # 加载 xml 文件
         self.env = MuJoCoParserClass(name='Tabletop',rel_xml_path=xml_path)
         self.action_type = action_type
         self.state_type = state_type
 
         # 6 个机器人关节名字
-        """
-        self.joint_names = ['joint1',
-                    'joint2',
-                    'joint3',
-                    'joint4',
-                    'joint5',
-                    'joint6',]
-        """
         self.joint_names = ['Rotation_R',
                     'Pitch_R',
                     'Elbow_R',

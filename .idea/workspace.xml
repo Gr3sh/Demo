@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8ca75036-df4a-4996-a9ff-874c97f88d26" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/3_8-Hex-Bore-Plastic-VersaHub-217-5828-v2-1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/3_8-Hex-Bore-Plastic-VersaHub-217-5828-v2-2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/3_8-Hex-Bore-Plastic-VersaHub-217-5828-v2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/94868A713_NO-THREADS_Female-Threaded-Hex-Standoff-1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/94868A713_NO-THREADS_Female-Threaded-Hex-Standoff-2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/94868A713_NO-THREADS_Female-Threaded-Hex-Standoff-3.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/94868A713_NO-THREADS_Female-Threaded-Hex-Standoff.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Base.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Base_08q-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Base_Motor.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Battery---Battery-5.2-Ah-DC5521-Plug-v2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Bottom-V2-v3.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Camera-Model-v3.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Camera-Mount-v6.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Fixed_Jaw.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Fixed_Jaw_Collision_1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Fixed_Jaw_Collision_2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Fixed_Jaw_Motor.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Fixed_Jaw_part1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Fixed_Jaw_part2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Lower_Arm.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Lower_Arm_Motor.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Moving_Jaw.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Moving_Jaw_08d-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Moving_Jaw_Collision_1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Moving_Jaw_Collision_2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Moving_Jaw_Collision_3.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Moving_Jaw_part1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Moving_Jaw_part2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Moving_Jaw_part3.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Passive_Horn_01-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Rotation_Pitch.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Rotation_Pitch_08i-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Rotation_Pitch_Motor.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/SO_ARM100_08k_116_Square-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/SO_ARM100_08k_Asym_Mirror_Clip-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/SO_ARM100_08k_Mirror-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/ST3215_Servo_Motor-v1-1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/ST3215_Servo_Motor-v1-2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/ST3215_Servo_Motor-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/STS3215_03a-v1-1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/STS3215_03a-v1-2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/STS3215_03a-v1-3.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/STS3215_03a-v1-4.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/STS3215_03a-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/STS3215_03a_Wrist_Roll-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Top-V2-v2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Upper_Arm.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Upper_Arm_Motor.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/WaveShare_Mounting_Plate_01d-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Wrist_Pitch_Roll.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Wrist_Pitch_Roll_Motor.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Wrist_Roll_08c-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/Wrist_Roll_Pitch_08i-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/base_plate_layer1-v5-1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/base_plate_layer2-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/drive_motor_mount-v4-1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/drive_motor_mount-v4-2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/drive_motor_mount-v4-3.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/drive_motor_mount-v4.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/lipo_battery_mount-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/servo_controller_mount-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/simplify_4-Omni-Directional-Wheel_Single_Body-v1-1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/simplify_4-Omni-Directional-Wheel_Single_Body-v1-2.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/assets/simplify_4-Omni-Directional-Wheel_Single_Body-v1.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/collect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/scene.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/xlerobot.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/XleRobot/xlerobot_mujoco.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omy/mujoco_env/y_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/omy/mujoco_env/y_env.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/omy" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Gr3sh&quot;
+  }
+}</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="72c404de-28b0-4ca6-9a94-4fd4fa1ee2d2" />
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Gr3sh/Demo.git&quot;,
+    &quot;accountId&quot;: &quot;72c404de-28b0-4ca6-9a94-4fd4fa1ee2d2&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="389E0qEMHYI9bD4QM5u2QfX2N7E" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/gr3sh/文档/demo/asset&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/asset" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/asset/objaverse" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.27397.106" />
+        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="8ca75036-df4a-4996-a9ff-874c97f88d26" name="更改" comment="" />
+      <created>1768203165559</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768203165559</updated>
+      <workItem from="1768203166616" duration="11185000" />
+      <workItem from="1768266853067" duration="13583000" />
+      <workItem from="1768442570258" duration="2422000" />
+      <workItem from="1768455470175" duration="15195000" />
+      <workItem from="1768700475751" duration="5910000" />
+      <workItem from="1768957925049" duration="8983000" />
+      <workItem from="1769129295281" duration="19620000" />
+      <workItem from="1769303757570" duration="20449000" />
+      <workItem from="1769389510132" duration="23502000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
