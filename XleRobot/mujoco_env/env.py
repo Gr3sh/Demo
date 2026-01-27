@@ -67,6 +67,9 @@ class XLeRobotController:
         self.replay_iter = None # replay 的设置
         self.mode = None # collect 收集数据，replay 重播数据集
 
+        self.init_qpos = self.data.qpos.copy()
+        self.init_qvel = self.data.qvel.copy()
+
     """ 输入 dataset 数据集设置 """
     def init_dataset(self, dataset):
         self.dataset = dataset
@@ -115,26 +118,32 @@ class XLeRobotController:
 
                 "record_start": glfw.KEY_Z, # 开启录制
                 "record_stop": glfw.KEY_X, # 停止录制
+                "reset": glfw.KEY_C, # 重置位置
             }
 
             for key_name, glfw_key in key_map.items():
                 self.key_states[key_name] = glfw.get_key(window, glfw_key) == glfw.PRESS
 
             # 判断 z x 键是否按下（这边应该还有问题，会导致运动非常卡顿，需要改进
-            for key in ["record_start", "record_stop"]:
+            for key in ["record_start", "record_stop", "reset"]:
                 prev = self.prev_key_states.get(key, False)
                 curr = self.key_states.get(key, False)
 
                 # Z：开始录制
                 if key == "record_start" and curr and not prev:
                     self.recording = True
-                    print(">>> Start recording")
+                    print(">>> 开始记录")
 
                 # X：停止录制
                 if key == "record_stop" and curr and not prev:
                     self.recording = False
                     self.dataset.save_episode()
-                    print(">>> Stop recording")
+                    print(">>> 停止记录")
+
+                # C: 重置位置
+                if key == "reset" and curr and not prev:
+                    self.reset()
+                    print(">>> 已重置位置")
 
             # 更新上一帧状态
             self.prev_key_states = self.key_states.copy()
@@ -269,7 +278,7 @@ class XLeRobotController:
 
     def run(self):
         """Main control loop for XLeRobot keyboard control."""
-        print("Starting XLeRobot keyboard Controller...")
+        print("开始 XLeRobot 键盘控制。。。")
 
         while self.viewer.is_alive:
             self.update_feedback() # 从仿真中读取机器人当前状态
@@ -310,3 +319,11 @@ class XLeRobotController:
 
         action = batch["action"][0].numpy()
         self.data.ctrl[:len(action)] = action
+
+    def reset(self):
+        self.data.qpos[:] = self.init_qpos
+        self.data.qvel[:] = self.init_qvel
+        mujoco.mj_forward(self.model, self.data)
+
+        self.qCmd[:] = 0
+        self.qdCmd[:] = 0

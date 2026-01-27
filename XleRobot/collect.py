@@ -25,7 +25,7 @@ xml_path = './xml/scene.xml'  # 场景
 create_new = True
 
 if os.path.exists(ROOT):
-    print(f"Directory {ROOT} already exists.")
+    print(f"目录 {ROOT} 已经存在")
     ans = input("已经存在数据，是否删除并重新创建? (y/n) ")
     if ans == 'y':
         import shutil
