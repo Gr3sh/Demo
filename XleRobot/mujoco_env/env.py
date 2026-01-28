@@ -10,8 +10,15 @@ import mujoco
 class XLeRobotController:
     def __init__(self, mjcf_path):
         """使用给定的 xml 路径初始化 mujoco 环境"""
-        self.model = mujoco.MjModel.from_xml_path(mjcf_path)
-        self.data = mujoco.MjData(self.model)
+        self.model = mujoco.MjModel.from_xml_path(mjcf_path) # 静态模型 由 scene.xml 决定
+        self.data = mujoco.MjData(self.model) # 动态状态 仿真过程中一直在变
+        """
+            qpos：所有关节/自由度的位置
+            qvel：速度
+            ctrl：控制输入
+            xpos：body 的世界坐标
+            time：仿真时间
+        """
         mujoco.mj_forward(self.model, self.data)
 
         self.render_freq = 60  # Hz
@@ -19,9 +26,10 @@ class XLeRobotController:
         self.viewer = mujoco_viewer.MujocoViewer(self.model, self.data)
 
         self.camera = mujoco.MjvCamera()
-        mujoco.mjv_defaultCamera(self.camera)
+        mujoco.mjv_defaultCamera(self.camera) # 创建可控相机对象
+
         self.camera.type = mujoco.mjtCamera.mjCAMERA_TRACKING
-        self.camera.trackbodyid = self.model.body("chassis").id
+        self.camera.trackbodyid = self.model.body("chassis").id # 跟随 chassis 对象
         self.camera.distance = 3.0
         self.camera.azimuth = 90.0
         self.camera.elevation = -30.0
@@ -29,10 +37,11 @@ class XLeRobotController:
 
         self.abs_vel = np.array([1, 1, 1])
         self.chassis_ref_vel = np.zeros(3)
-        self.qCmd = np.zeros(self.model.nu)
-        self.qdCmd = np.zeros(self.model.nu)
-        self.qFb = np.zeros(self.model.nu)
-        self.qdFb = np.zeros(self.model.nu)
+        # self.model.nu 是控制维度 是 actuator数量
+        self.qCmd = np.zeros(self.model.nu) # 位置指令
+        self.qdCmd = np.zeros(self.model.nu) # 速度指令
+        self.qFb = np.zeros(self.model.nu) # 位置反馈
+        self.qdFb = np.zeros(self.model.nu) # 速度反馈
         self.last_render_time = time.time()
         self.kp = 1
 
@@ -64,6 +73,7 @@ class XLeRobotController:
         self.recording = False # 是否开始录制（待改进
         self.key_states = {} # z x 按键控制状态（待改进
         self.prev_key_states = {} # z x 先前控制状态（待改进
+        self.key_events = None # 记录z x c 按键是否按下情况
         self.replay_iter = None # replay 的设置
         self.mode = None # collect 收集数据，replay 重播数据集
 
@@ -144,6 +154,11 @@ class XLeRobotController:
                 if key == "reset" and curr and not prev:
                     self.reset()
                     print(">>> 已重置位置")
+
+            if self.check_success():
+                self.recording = False
+                self.dataset.save_episode()
+                print(">>> 停止记录")
 
             # 更新上一帧状态
             self.prev_key_states = self.key_states.copy()
@@ -327,3 +342,17 @@ class XLeRobotController:
 
         self.qCmd[:] = 0
         self.qdCmd[:] = 0
+
+    def get_p_body(self, body_name):
+        return self.data.body(body_name).xpos.copy()
+
+    def check_success(self):
+        p_body = self.get_p_body("chassis")
+        g_body = self.get_p_body("goal")
+
+        dist_xy = np.linalg.norm(p_body[:2] - g_body[:2])
+        vel_xy = np.linalg.norm(self.qdFb[:2])  # 底盘速度
+
+        if dist_xy < 0.5 and vel_xy < 0.05:
+            return True
+        return False
