@@ -41,7 +41,7 @@ if create_new:
         robot_type="XleRobot",  # 机器人型号 自定义
         fps=20,  # 帧率
         features={
-            "observation.state": {
+            "observation.environment_state": {
                 "dtype": "float64",
                 "shape": (18,),
                 "names": ["base_xy_yaw_and_joints"],

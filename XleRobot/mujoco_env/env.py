@@ -308,7 +308,7 @@ class XLeRobotController:
                     action = self.data.ctrl[:18].copy()
 
                     self.dataset.add_frame({
-                        "observation.state": state,
+                        "observation.environment_state": state,
                         "action": action,
                     }, task = 'test dataset'
                 )
