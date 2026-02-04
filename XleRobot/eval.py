@@ -26,6 +26,18 @@ class AddGaussianNoise(object):
     def __repr__(self):
         return f"{self.__class__.__name__}(mean={self.mean}, std={self.std})"
 
+class EpisodeSampler(torch.utils.data.Sampler):
+    def __init__(self, dataset: LeRobotDataset, episode_index: int):
+        from_idx = dataset.episode_data_index["from"][episode_index].item()
+        to_idx = dataset.episode_data_index["to"][episode_index].item()
+        self.frame_ids = range(from_idx, to_idx)
+
+    def __iter__(self):
+        return iter(self.frame_ids)
+
+    def __len__(self) -> int:
+        return len(self.frame_ids)
+
 device = torch.device("cuda")
 
 # Number of offline training steps (we'll only do offline training for this example.)
@@ -57,13 +69,7 @@ input_features = {
 
 # Policies are initialized with a configuration class, in this case `DiffusionConfig`. For this example,
 # we'll just use the defaults and so no arguments other than input/output features need to be passed.
-cfg = ACTConfig(
-    input_features=input_features,
-    output_features=output_features,
-    chunk_size= 10,
-    n_action_steps=10
-)
-
+cfg = ACTConfig(input_features=input_features, output_features=output_features, chunk_size= 10, n_action_steps=10)
 # This allows us to construct the data with action chunking
 delta_timestamps = resolve_delta_timestamps(cfg, dataset_metadata)
 
@@ -95,27 +101,52 @@ dataloader = torch.utils.data.DataLoader(
     drop_last=True,
 )
 
-# Run training loop.
-step = 0
-done = False
-while not done:
-    for batch in dataloader:
-        inp_batch = {k: (v.to(device) if isinstance(v, torch.Tensor) else v) for k, v in batch.items()}
+class EpisodeSampler(torch.utils.data.Sampler):
+    def __init__(self, dataset: LeRobotDataset, episode_index: int):
+        from_idx = dataset.episode_data_index["from"][episode_index].item()
+        to_idx = dataset.episode_data_index["to"][episode_index].item()
+        self.frame_ids = range(from_idx, to_idx)
 
-        if "observation.environment_state" in inp_batch:
-            inp_batch["observation.state"] = inp_batch["observation.environment_state"]
+    def __iter__(self):
+        return iter(self.frame_ids)
 
-        loss, _ = policy.forward(inp_batch)
-        loss.backward()
-        optimizer.step()
-        optimizer.zero_grad()
+    def __len__(self) -> int:
+        return len(self.frame_ids)
 
-        if step % log_freq == 0:
-            print(f"step: {step} loss: {loss.item():.3f}")
-        step += 1
-        if step >= training_steps:
-            done = True
-            break
+policy.eval()
+actions = []
+gt_actions = []
+images = []
+episode_index = 0
+episode_sampler = EpisodeSampler(dataset, episode_index)
+test_dataloader = torch.utils.data.DataLoader(
+    dataset,
+    num_workers=4,
+    batch_size=1,
+    shuffle=False,
+    pin_memory=device.type != "cpu",
+    sampler=episode_sampler,
+)
+policy.reset()
+for batch in test_dataloader:
+    inp_batch = {k: (v.to(device) if isinstance(v, torch.Tensor) else v) for k, v in batch.items()}
+    action = policy.select_action(inp_batch)
+    actions.append(action)
+    gt_actions.append(inp_batch["action"][:,0,:])
+actions = torch.cat(actions, dim=0)
+gt_actions = torch.cat(gt_actions, dim=0)
+print(f"Mean action error: {torch.mean(torch.abs(actions - gt_actions)).item():.3f}")
 
-# Save the policy to disk.
-policy.save_pretrained('./ckpt/act_y')
+'''
+plot actions and gt_actions
+'''
+import matplotlib.pyplot as plt
+action_dim = 7
+
+fig, axs = plt.subplots(action_dim, 1, figsize=(10, 10))
+
+for i in range(action_dim):
+    axs[i].plot(actions[:, i].cpu().detach().numpy(), label="pred")
+    axs[i].plot(gt_actions[:, i].cpu().detach().numpy(), label="gt")
+    axs[i].legend()
+plt.show()
